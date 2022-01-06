@@ -1,0 +1,10 @@
+const express = require("express");
+const NoteController = require("../../controllers/note.controller.js");
+const router = express.Router();
+router.get("/", NoteController.findAll);
+router.get("/search/:tag", NoteController.find);
+router.get("/:id", NoteController.findOne);
+router.post("/", NoteController.create);
+router.patch("/:id", NoteController.update);
+router.delete("/:id", NoteController.destroy);
+module.exports = router;
